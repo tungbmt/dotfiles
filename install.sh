@@ -5,14 +5,14 @@ echo "`whoami` ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/`whoami` && \
 sudo chmod 0440 /etc/sudoers.d/`whoami` &&
 
 # update
-sudo apt update && sudo apt upgrade -y &&
+sudo apt update && sudo apt upgrade -y;
 
 # install package
-sudo apt autoremove vim vim-tiny -y && 
-sudo apt install neovim tmux -y &&
+sudo apt autoremove vim vim-tiny -y;
+sudo apt install neovim tmux -y;
 
 # install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash && 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash;
 
 # install node lts
 . ~/.nvm/nvm.sh
