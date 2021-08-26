@@ -7,10 +7,11 @@ require 'nvim-treesitter.configs'.setup {
     enable = true,
   },
   ensure_installed = {
-    "tsx",
-    "json",
-    "yaml",
-    "html",
-    "scss",
+    'bash',
+    'tsx',
+    'json',
+    'yaml',
+    'html',
+    'scss',
   }
 }

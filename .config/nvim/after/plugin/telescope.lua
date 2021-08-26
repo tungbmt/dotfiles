@@ -1,8 +1,10 @@
 local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap('n', ';f', '<Cmd>Telescope find_files<CR>', opts)
-vim.api.nvim_set_keymap('n', ';r', '<Cmd>Telescope live_grep<CR>', opts)
-vim.api.nvim_set_keymap('n', '\\\\', '<Cmd>Telescope buffers<CR>', opts)
-vim.api.nvim_set_keymap('n', ';;', '<Cmd>Telescope help_tags<CR>', opts)
+local remap = vim.api.nvim_set_keymap
+
+remap('n', ';f', '<Cmd>Telescope find_files<CR>', opts)
+remap('n', ';r', '<Cmd>Telescope live_grep<CR>', opts)
+remap('n', '\\\\', '<Cmd>Telescope buffers<CR>', opts)
+remap('n', ';;', '<Cmd>Telescope help_tags<CR>', opts)
 
 local actions = require('telescope.actions')
 

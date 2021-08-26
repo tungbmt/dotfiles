@@ -1,18 +1,22 @@
 #!/bin/bash
 
 # disable password
-echo "`whoami` ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/`whoami` && \
-sudo chmod 0440 /etc/sudoers.d/`whoami` &&
+# echo "`whoami` ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/`whoami` && \
+# sudo chmod 0440 /etc/sudoers.d/`whoami` &&
+
+# add neovim ppa to install neovim version >= 0.5
+# TODO: remove when stable version >= 0.5
+sudo add-apt-repository ppa:neovim-ppa/unstable
 
 # update
-sudo apt update && sudo apt upgrade -y;
+sudo apt update && sudo apt upgrade -y
 
 # install package
-sudo apt autoremove vim vim-tiny -y;
-sudo apt install neovim tmux -y;
+sudo apt autoremove vim vim-tiny -y
+sudo apt install neovim tmux peco ripgrep build-essential -y
 
 # install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash;
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
 # install node lts
 . ~/.nvm/nvm.sh
@@ -20,25 +24,23 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash;
 . ~/.bashrc
 nvm install --lts
 
-# config tmux
-cat >> ~/.tmux.conf << EOL
-# remap prefix from 'C-b' to 'C-a'
-unbind C-b
-set-option -g prefix C-a
-bind-key C-a send-prefix
+mkdir -p ~/.config
 
-# split panes using | and -
-bind | split-window -h
-bind - split-window -v
-unbind '"'
-unbind %
+git clone git@github.com:tungbmt/wsl-setup.git
+cd ./wsl-setup
 
-# switch panes using Alt-arrow without prefix
-bind -n M-h select-pane -L
-bind -n M-l select-pane -R
-bind -n M-k select-pane -U
-bind -n M-j select-pane -D
+cat ./.bash_aliases >> ~/.bash_aliases
+cd ./.config
+cp -r nvim tmux ~/.config
 
-# Enable mouse mode (tmux 2.1 and above)
-set -g mouse on
-EOL
+cd ..
+cp ./.tmux.conf ~/
+
+# neovim setup
+# install neovim package manager
+git clone https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+echo "RUN: npm install -g typescript typescript-language-server"
+
+

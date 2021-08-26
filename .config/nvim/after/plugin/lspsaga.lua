@@ -9,7 +9,8 @@ saga.init_lsp_saga {
 }
 
 local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
-vim.api.nvim_set_keymap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
-vim.api.nvim_set_keymap('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
-vim.api.nvim_set_keymap('n', 'gh', '<Cmd>Lspsaga lsp_finder<CR>', opts)
+local remap = vim.api.nvim_set_keymap
+remap('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', opts)
+remap('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', opts)
+remap('i', '<C-k>', '<Cmd>Lspsaga signature_help<CR>', opts)
+remap('n', 'gh', '<Cmd>Lspsaga lsp_finder<CR>', opts)

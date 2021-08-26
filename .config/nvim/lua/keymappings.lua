@@ -1,66 +1,33 @@
--- CHANGE HERE --
-local keymaps = {
-  insert_mode = {
-    ["jk"] = "<ESC>",
-  },
-  normal_mode = {
-    -- <C-s> to save
-    ["<C-s>"] = { ":write<CR>", { noremap=true } },
-  },
-  visual_mode = {
-    -- Better indenting
-    ["<"] = "<gv",
-    [">"] = ">gv",
-  },
-}
+local remap = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
 
--- DO NOT TOUCH --
-local M = {}
+remap('i', 'jk', '<ESC>', opts)
 
-local generic_opts_any = { noremap = true, silent = true }
+-- ctrl + s to save
+remap('n', '<C-s>', ':write<CR>', { noremap = true })
 
-local generic_opts = {
-  ["i"] = generic_opts_any,
-  ["n"] = generic_opts_any,
-  ["v"] = generic_opts_any,
-  ["x"] = generic_opts_any,
-  ["c"] = generic_opts_any,
-  ["t"] = { silent = true },
-}
+-- delete without yank
+remap('n', 'x', '"_x', { noremap = true })
+remap('n', '<leader>d', '"_d', { noremap = true })
 
-local mode_adapters = {
-  insert_mode = "i",
-  normal_mode = "n",
-  term_mode = "t",
-  visual_mode = "v",
-  visual_block_mode = "x",
-  command_mode = "c",
-}
+-- tabs
+remap('n', 'te', ':tabedit ', {})
+remap('n', '<S-Tab>', ':tabprev<CR>', {})
+remap('n', '<Tab>', ':tabnext<CR>', {})
 
-function M.set_keymaps(mode, from, to) 
-  local opt = generic_opts[mode] and generic_opts[mode] or generic_opts_any
-  if type(from) == "table" then
-    opt = from[2]
-    from = from[1]
-  end
-  vim.api.nvim_set_keymap(mode, to, from, opt)
-end
+-- split window
+remap('n', 'ss', ':split<CR><C-w>w', {})
+remap('n', 'sv', ':vsplit<CR><C-w>w', {})
 
-function M.load_mode(mode, mappings)
-  mode = mode_adapters[mode] and mode_adapters[mode] or mode
-  for to, from in pairs(mappings) do
-    M.set_keymaps(mode, from, to)
-  end
-end
+-- resize window
+remap('n', '<C-w><left>', '10<C-w><', {})
+remap('n', '<C-w><right>', '10<C-w>>', {})
+remap('n', '<C-w><up>', '10<C-w>+', {})
+remap('n', '<C-w><down>', '10<C-w>-', {})
 
-function M.load(keymaps)
-  for mode, mappings in pairs(keymaps) do
-    M.load_mode(mode, mappings)
-  end
-end
-
-function M.setup()
-  M.load(keymaps)
-end
-
-return M
+-- move window
+remap('n', '<Space>', '<C-w>w', {})
+remap('', 'sh', '<C-w>h', {})
+remap('', 'sj', '<C-w>j', {})
+remap('', 'sk', '<C-w>k', {})
+remap('', 'sl', '<C-w>l', {})

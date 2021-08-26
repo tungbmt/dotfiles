@@ -22,34 +22,26 @@ local options = {
   cursorline = true, -- highlight the current line
   signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
   spell = true,
-  spelllang = "en",
+  spelllang = "en_us",
   scrolloff = 8,
   sidescrolloff = 8,
 }
 
--- DO NOT TOUCH --
-local M = {}
-
-function M.load_options(options)
-  local opt = vim.opt
-  opt.shortmess:append "c"
-
-  for k, v in pairs(options) do
-    vim.opt[k] = v
-  end
+for k, v in pairs(options) do
+  vim.opt[k] = v
 end
 
-M.load_commands = function () 
-  local cmd = vim.cmd
-  cmd("set whichwrap+=<,>,[,],h,l")
-  cmd('syntax on')
-  cmd('colorscheme onedark')
-  cmd('hi Normal ctermbg=none guibg=none')
-end
+local commands = {
+  'set whichwrap+=<,>,[,],h,l',
+  'syntax on',
+  'colorscheme onedark',
+  'hi Normal ctermbg=none guibg=none',
+  'hi SpellBad cterm=underline guifg=NONE',
+  'hi SpellLocal cterm=underline guifg=NONE',
+  'hi SpellRare cterm=underline guifg=NONE',
+  'hi SpellCap cterm=underline guifg=NONE',
+}
 
-function M.setup()
-  M.load_options(options)
-  M.load_commands()
+for _, command in ipairs(commands) do
+  vim.cmd(command)
 end
-
-return M

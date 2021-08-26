@@ -31,16 +31,18 @@ require'compe'.setup {
     --vsnip = true;
     ultisnips = true;
     luasnip = true;
-    spell = true;
+    --spell = true;
   };
 }
 
 local opts = { noremap = true, silent = true, expr = true}
-vim.api.nvim_set_keymap('i', '<C-Space>', 'compe#complete()', opts)
---vim.api.nvim_set_keymap('i', '<CR>', 'compe#confirm("<CR>")', opts)
-vim.api.nvim_set_keymap('i', '<C-e>', 'compe#close("<C-e>")', opts)
-vim.api.nvim_set_keymap('i', '<C-f>', 'compe#scroll({ "delta": +4 })', opts)
-vim.api.nvim_set_keymap('i', '<C-d>', 'compe#scroll({ "delta": -4 })', opts)
-vim.api.nvim_set_keymap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', { noremap = true, expr = true })
-vim.api.nvim_set_keymap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', { noremap = true, expr = true })
+local remap = vim.api.nvim_set_keymap
+
+remap('i', '<C-Space>', 'compe#complete()', opts)
+--remap('i', '<CR>', 'compe#confirm("<CR>")', opts)
+remap('i', '<C-e>', 'compe#close("<C-e>")', opts)
+remap('i', '<C-f>', 'compe#scroll({ "delta": +4 })', opts)
+remap('i', '<C-d>', 'compe#scroll({ "delta": -4 })', opts)
+remap('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', { noremap = true, expr = true })
+remap('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"', { noremap = true, expr = true })
 

@@ -1,4 +1,3 @@
 require('plugins')
-require('settings').setup()
-require('keymappings').setup()
-
+require('settings')
+require('keymappings')
