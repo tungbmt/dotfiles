@@ -21,7 +21,7 @@ local options = {
   wrap = false, -- display lines as one long line
   cursorline = true, -- highlight the current line
   signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
-  spell = false,
+  spell = true,
   spelllang = "en",
   scrolloff = 8,
   sidescrolloff = 8,
@@ -41,7 +41,10 @@ end
 
 M.load_commands = function () 
   local cmd = vim.cmd
-  cmd "set whichwrap+=<,>,[,],h,l"
+  cmd("set whichwrap+=<,>,[,],h,l")
+  cmd('syntax on')
+  cmd('colorscheme onedark')
+  cmd('hi Normal ctermbg=none guibg=none')
 end
 
 function M.setup()

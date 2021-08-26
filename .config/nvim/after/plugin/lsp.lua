@@ -15,10 +15,10 @@ local on_attach = function(client, bufnr)
 
   local opts = { noremap = true, silent = true }
 
-  -- TODO --
-  -- add shortcut here
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-
+  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   -- formatting
   if client.resolved_capabilities.document_formatting then
     vim.api.nvim_command [[augroup Format]]
@@ -27,9 +27,7 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_command [[augroup END]]
   end
 
-  require'completion'.on_attach(client, bufnr)
-
-   protocol.CompletionItemKind = {
+  protocol.CompletionItemKind = {
     '', -- Text
     '', -- Method
     '', -- Function
