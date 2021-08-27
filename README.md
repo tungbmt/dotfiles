@@ -1,4 +1,4 @@
-# wsl-setup
+# dotfiles
 
 ```sh
 curl https://raw.githubusercontent.com/tungbmt/wsl-setup/main/install.sh | bash
@@ -15,3 +15,4 @@ curl https://raw.githubusercontent.com/tungbmt/wsl-setup/main/install.sh | bash
 - [x] refactor `init.lua` (maybe)
 - [ ] ~~write script for setup minimal system (linux)~~
 - [x] write `README.md`
+- [x] use zsh 
