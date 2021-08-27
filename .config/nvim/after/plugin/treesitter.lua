@@ -7,6 +7,9 @@ require 'nvim-treesitter.configs'.setup {
     enable = true,
   },
   ensure_installed = {
+    'typescript',
+    'javascript',
+    'regex',
     'bash',
     'tsx',
     'json',
