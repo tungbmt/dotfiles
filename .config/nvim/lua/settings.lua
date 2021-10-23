@@ -33,13 +33,13 @@ end
 
 local commands = {
   'set whichwrap+=<,>,[,],h,l',
-  'syntax on',
-  'colorscheme onedark',
-  'hi Normal ctermbg=none guibg=none',
-  'hi SpellBad cterm=underline guifg=NONE',
-  'hi SpellLocal cterm=underline guifg=NONE',
-  'hi SpellRare cterm=underline guifg=NONE',
-  'hi SpellCap cterm=underline guifg=NONE',
+  --'syntax on',
+  'colorscheme everforest',
+  --'hi Normal ctermbg=none guibg=none',
+  --'hi SpellBad cterm=underline guifg=NONE',
+  --'hi SpellLocal cterm=underline guifg=NONE',
+  --'hi SpellRare cterm=underline guifg=NONE',
+  --'hi SpellCap cterm=underline guifg=NONE',
 }
 
 for _, command in ipairs(commands) do

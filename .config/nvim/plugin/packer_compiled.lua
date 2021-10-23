@@ -69,17 +69,21 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+  },
+  everforest = {
+    loaded = true,
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/everforest"
+  },
   gruvbox = {
     loaded = true,
     path = "/home/tung/.local/share/nvim/site/pack/packer/start/gruvbox"
-  },
-  ["lsp-colors.nvim"] = {
-    loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim"
-  },
-  ["lspsaga.nvim"] = {
-    loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -89,9 +93,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/tung/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
-  ["nvim-compe"] = {
+  ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -104,10 +108,6 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/tung/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
-  },
-  ["onedark.vim"] = {
-    loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/onedark.vim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -124,6 +124,14 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/tung/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["vim-dogrun"] = {
+    loaded = true,
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/vim-dogrun"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/vim-surround"
   }
 }
 

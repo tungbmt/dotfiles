@@ -1,20 +1,9 @@
-require 'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-    disable = {},
-  },
-  indet = {
-    enable = true,
-  },
+require'nvim-treesitter.configs'.setup{
   ensure_installed = {
     'typescript',
-    'javascript',
-    'regex',
-    'bash',
-    'tsx',
-    'json',
-    'yaml',
-    'html',
-    'scss',
+    'javascript'
+  },
+  highlight = {
+    enable = true,
   }
 }

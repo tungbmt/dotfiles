@@ -1,12 +1,13 @@
 local nvim_lsp = require('lspconfig')
 local protocol = require('vim.lsp.protocol')
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local lsp = vim.lsp
+local handlers = lsp.handlers
 
-require("lsp-colors").setup({
-  Error = "#db4b4b",
-  Warning = "#e0af68",
-  Information = "#0db9d7",
-  Hint = "#10B981"
-})
+-- Hover doc popup
+local pop_opts = { border = "rounded", max_width = 80 }
+handlers["textDocument/hover"] = lsp.with(handlers.hover, pop_opts)
+handlers["textDocument/signatureHelp"] = lsp.with(handlers.signature_help, pop_opts)
 
 local on_attach = function(client, bufnr)
   local api = vim.api
@@ -19,6 +20,9 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gi', '<Cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', 'gr', '<Cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('i', '<C-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<F2>', '<Cmd>lua vim.lsp.buf.rename()<CR>', opts)
 
   -- formatting
   local cmd = vim.api.nvim_command
@@ -59,6 +63,6 @@ local on_attach = function(client, bufnr)
 end
 
 nvim_lsp.tsserver.setup {
-  on_attach = on_attach
+  on_attach = on_attach,
+  capabilities = capabilities
 }
-
