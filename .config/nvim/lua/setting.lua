@@ -1,4 +1,3 @@
--- CHANGE HERE --
 local options = {
   shiftwidth = 2, -- the number of spaces inserted for each indentation
   tabstop = 2, -- insert 2 spaces for a tab
@@ -21,7 +20,7 @@ local options = {
   wrap = false, -- display lines as one long line
   cursorline = true, -- highlight the current line
   signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
-  spell = true,
+  spell = false,
   spelllang = "en_us",
   scrolloff = 8,
   sidescrolloff = 8,
@@ -33,9 +32,9 @@ end
 
 local commands = {
   'set whichwrap+=<,>,[,],h,l',
-  --'syntax on',
-  'colorscheme everforest',
+  'colorscheme gruvbox-material',
   --'hi Normal ctermbg=none guibg=none',
+  --'syntax on',
   --'hi SpellBad cterm=underline guifg=NONE',
   --'hi SpellLocal cterm=underline guifg=NONE',
   --'hi SpellRare cterm=underline guifg=NONE',

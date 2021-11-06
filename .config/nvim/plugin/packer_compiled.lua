@@ -71,67 +71,78 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   everforest = {
     loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/everforest"
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/everforest",
+    url = "https://github.com/sainnhe/everforest"
   },
-  gruvbox = {
+  ["gruvbox-material"] = {
     loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/gruvbox"
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material"
   },
   ["lualine.nvim"] = {
     loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/hoob3rt/lualine.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["popup.nvim"] = {
     loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/popup.nvim"
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/popup.nvim",
+    url = "https://github.com/nvim-lua/popup.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/telescope.nvim"
-  },
-  ["vim-dogrun"] = {
-    loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/vim-dogrun"
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["vim-surround"] = {
     loaded = true,
-    path = "/home/tung/.local/share/nvim/site/pack/packer/start/vim-surround"
+    path = "/home/tung/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   }
 }
 
